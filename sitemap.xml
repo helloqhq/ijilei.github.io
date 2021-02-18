@@ -4,6 +4,17 @@
   
   <url>
     <loc>https://ijilei.com/post/home/</loc>
+    <lastmod>2021-02-18T17:06:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ijilei.com/post/</loc>
+    <lastmod>2021-02-18T17:06:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ijilei.com/</loc>
+    <lastmod>2021-02-18T17:06:52+08:00</lastmod>
   </url>
   
   <url>
@@ -11,15 +22,7 @@
   </url>
   
   <url>
-    <loc>https://ijilei.com/post/</loc>
-  </url>
-  
-  <url>
     <loc>https://ijilei.com/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ijilei.com/</loc>
   </url>
   
 </urlset>
