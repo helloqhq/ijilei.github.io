@@ -1,0 +1,516 @@
+/* 通用样式 */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* 导航栏样式 */
+.nav-tabs {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav-tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: #9c9897;
+    border-radius: 4px;
+}
+
+.nav-tab.active {
+    background: #007bff;
+    color: white;
+}
+
+/* 内容区布局 */
+.tab-content {
+    height: calc(100% - 60px); /* 减去导航栏和margin的高度 */
+}
+
+.flex-container {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+
+.input-section, .result-section {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* 文本框样式 */
+textarea {
+    width: 100%;
+    flex: 1;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    resize: none;
+    box-sizing: border-box;
+}
+
+/* 按钮样式 */
+.button-group {
+    margin: 10px 0;
+    flex-shrink: 0;
+}
+
+button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* JSON高亮样式 */
+.json-highlight {
+    flex: 1;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    overflow: auto;
+}
+
+.json-key { color: #d63384; }
+.json-string { color: #198754; }
+.json-number { color: #0d6efd; }
+.json-boolean { color: #dc3545; }
+.json-null { color: #6c757d; }
+
+/* 差异高亮 */
+.diff-added { background-color: #d4edda; }
+.diff-removed { background-color: #f8d7da; }
+.diff-modified { background-color: #fff3cd; }
+
+/* 子标签页样式 */
+.sub-tabs {
+    display: flex;
+    gap: 2px;
+    margin: 10px 0 20px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.sub-tab {
+    padding: 8px 15px;
+    background: #9c9897;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.sub-tab.active {
+    background: #0056b3;
+    color: white;
+}
+
+/* 比对输入区域样式 */
+.compare-inputs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.compare-input-group {
+    flex: 1;
+}
+
+.compare-input-group textarea {
+    height: 300px;
+}
+
+/* 主题设置面板 */
+.theme-settings {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.theme-panel {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* 复选框样式 */
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    margin-right: 5px;
+}
+
+/* 合并选项样式 */
+#mergeDirection {
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-left: 10px;
+}
+
+/* 响应式布局 */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    
+    .compare-inputs {
+        flex-direction: column;
+    }
+}
+
+/* 比对相关样式 */
+.compare-wrapper {
+    position: relative;
+    flex: 1;
+    margin: 10px 0;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.compare-wrapper textarea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre;
+    tab-size: 2;
+    color: transparent;
+    background: transparent;
+    caret-color: black;
+    z-index: 2;
+    resize: both;
+    min-height: 200px;
+    overflow: auto;
+}
+
+.compare-highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre;
+    pointer-events: none;
+    overflow: auto;
+    color: black;
+    background: white;
+    z-index: 1;
+    margin: 0;
+    height: 100%;
+}
+
+/* 差异高亮样式 */
+.diff-line {
+    display: block;
+    width: 100%;
+}
+
+.diff-modified {
+    background-color: rgba(255, 193, 7, 0.2);
+    display: inline-block;
+    width: 100%;
+}
+
+/* 标题样式 */
+h3 {
+    margin: 0 0 10px 0;
+}
+
+/* 基础样式 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* JSON高亮样式 */
+.json-highlight {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    white-space: pre-wrap;
+    overflow: auto;
+    padding: 1rem;
+    height: 100%;
+}
+
+.json-key { color: #d63384; }
+.json-string { color: #198754; }
+.json-number { color: #0d6efd; }
+.json-boolean { color: #dc3545; }
+.json-null { color: #6c757d; }
+
+/* 比对相关样式 */
+.compare-wrapper {
+    position: relative;
+    height: auto;
+    min-height: 200px;
+    overflow: visible;
+}
+
+.compare-highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre;
+    pointer-events: none;
+    overflow: auto;
+    color: black;
+    background: white;
+    z-index: 1;
+    margin: 0;
+    height: 100%;
+}
+
+/* 差异高亮样式 */
+.diff-line {
+    display: block;
+    width: 100%;
+}
+
+.diff-modified {
+    background-color: rgba(255, 193, 7, 0.2);
+    display: inline-block;
+    width: 100%;
+}
+
+/* 卡片样式优化 */
+.card {
+    height: auto !important;
+    min-height: 300px;
+}
+
+.card-body {
+    height: auto;
+    min-height: 200px;
+    padding: 1rem;
+    position: relative;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+/* 文本域样式 */
+textarea {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+}
+
+/* 标签页内容区域 */
+.tab-content {
+    height: calc(100vh - 120px);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .tab-content {
+        height: auto;
+    }
+    
+    .card {
+        height: 300px !important;
+        margin-bottom: 1rem;
+    }
+}
+
+/* 基础布局样式 */
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* 容器样式 */
+.container-fluid {
+    height: 100vh;
+    padding: 0;
+}
+
+/* 标签页内容区域 */
+.tab-content {
+    height: 90vh;
+}
+
+/* 卡片样式 */
+.card.h-100 {
+    height: 90vh !important;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.card-header {
+    flex-shrink: 0;
+    padding: 0.5rem 1rem;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    position: relative;
+    overflow: visible;
+}
+
+/* 输入框容器样式 */
+.compare-wrapper {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: calc(100% - 10px);
+    margin: 0;
+    margin-bottom: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+/* 文本框样式 */
+.card-body textarea {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98%;
+    height: 90%;
+    padding: 0.5rem;
+    border: 1px solid #303133;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre;
+    tab-size: 2;
+    color: transparent;
+    background: transparent;
+    caret-color: black;
+    z-index: 2;
+    resize: none;
+}
+
+/* 高亮显示样式 */
+.compare-highlight {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98%;
+    height: 90%;
+    padding: 0.5rem;
+    margin: 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre;
+    pointer-events: none;
+    overflow: auto;
+    color: black;
+    background: white;
+    z-index: 1;
+    border-radius: 4px;
+}
+
+/* 比对页面布局 */
+#compareTab .row {
+    height: 85vh;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 0.5vh;
+    }
+
+    .card.h-100 {
+        height: 80vh !important;
+    }
+
+    .compare-wrapper {
+        width: 96%;
+        height: 96%;
+    }
+}
+
+/* 按钮组样式 */
+.btn-group {
+    margin-left: 0.5rem; /* 添加左侧外边距 */
+}
+
+/* 或者调整容器的内边距 */
+.d-flex.justify-content-between {
+    padding: 0 0.5rem; /* 给整个容器添加左右内边距 */
+}
+ 
