@@ -72,6 +72,11 @@ function debounce(func, wait) {
 const executeOperation = debounce(() => {
     const input = document.getElementById('formatInput');
     const resultDiv = document.getElementById('formatResult');
+
+    if (input.value === '') {
+        resultDiv.innerHTML = '';
+        return;
+    }
     
     try {
         let result;
