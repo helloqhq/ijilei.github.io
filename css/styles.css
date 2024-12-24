@@ -433,7 +433,7 @@ html, body {
     padding: 0.25rem; /* 减小内边距 */
     position: relative;
     overflow: visible;
-    margin-top: -5px; /* 向上微调 */
+    margin-top: 8px; /* 向上微调 */
 }
 
 /* 文本框样式 */
@@ -546,7 +546,7 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 98%;
-    height: 88%;
+    height: 95%;
     padding: 0.5rem;
     border: 1px solid #303133;
     border-radius: 4px;
