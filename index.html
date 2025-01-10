@@ -1,43 +1,71 @@
- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON工具</title>
+    
+    <!-- SEO meta tags -->
+    <title>JSON格式化工具 | 在线JSON校验/格式化/压缩</title>
+    <meta name="description" content="免费在线JSON格式化工具，提供JSON美化、压缩、校验功能，支持JSON语法检查，让JSON更易读。">
+    <meta name="keywords" content="JSON格式化,JSON校验,JSON美化,JSON压缩,在线工具,JSON编辑器">
+    <meta name="author" content="JSON工具">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="JSON格式化工具 | 在线JSON校验/格式化/压缩">
+    <meta property="og:description" content="免费在线JSON格式化工具，提供JSON美化、压缩、校验功能，支持JSON语法检查，让JSON更易读。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://您的网站域名/json/">
+    
+    <!-- 其他原有的样式和链接 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* 设置iframe无边框 */
         .fullscreen-iframe {
             border: none;
             width: 100%;
-            height: 100vh; /* 视窗高度的100%，用于全屏 */
+            height: 100vh;
         }
 
-        /* 设置.container宽度为100% */
         .container-custom {
             width: 100% !important;
             max-width: 100% !important;
         }
     </style>
 
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "JSON格式化工具",
+      "description": "免费在线JSON格式化工具，提供JSON美化、压缩、校验功能",
+      "applicationCategory": "开发者工具",
+      "operatingSystem": "全平台",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY"
+      }
+    }
+    </script>
+
     <!-- 广告 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9120805129279072"
     crossorigin="anonymous"></script>
 
-    <!-- Google 分析 tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6WD33L36W"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-Q6WD33L36W');
     </script>
 </head>
 <body>
-    <div class="container-custom">
-        <iframe src="./json-fmt/index.html" class="fullscreen-iframe"></iframe>
-    </div>
+    <main class="container-custom">
+        <iframe src="./json-fmt/index.html" class="fullscreen-iframe" title="JSON格式化工具"></iframe>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
